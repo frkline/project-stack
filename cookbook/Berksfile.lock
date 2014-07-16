@@ -1,0 +1,88 @@
+DEPENDENCIES
+  cb-common
+    git: git@github.com:frkline/cb-common.git
+    revision: 21263e016622efc64780b5c3efb06ba7d9a1c6ab
+    branch: release-0.3.0
+    rel: cookbook
+  cb-java
+    git: git@github.com:frkline/cb-java.git
+    revision: 2024eb233a6e4c2912d4c63218b4566f124b0ff3
+    branch: release-0.2.0
+    rel: cookbook
+  cb-nginx
+    git: git@github.com:frkline/cb-nginx.git
+    revision: d4c89f5c8e3a390f2e0e8d3a8091d8f5a7e84221
+    branch: release-0.1.0
+    rel: cookbook
+  cb-tomcat
+    git: git@github.com:frkline/cb-tomcat.git
+    revision: 29b1325035d0d0d015fc4762b061d5b192c32ac6
+    branch: release-0.1.0
+    rel: cookbook
+  hosts_file
+    git: git@github.com:frkline/hosts_file.git
+    revision: b10d76b3affad491eba114a555bde676621b6fc5
+    branch: release-0.3.0
+  java_ext
+    git: git@github.com:frkline/java_ext.git
+    revision: 73f1ffb9205c25d42e946dc944d01a5b9191c65c
+    tag: 0.1.1
+  project-stack
+    path: .
+    metadata: true
+
+GRAPH
+  7-zip (1.0.2)
+    windows (>= 1.2.2)
+  apt (2.4.0)
+  ark (0.9.0)
+    7-zip (>= 0.0.0)
+    windows (>= 0.0.0)
+  bluepill (2.3.1)
+    rsyslog (>= 0.0.0)
+  build-essential (2.0.4)
+  cb-common (0.3.0)
+    hosts_file (= 0.3.0)
+    ntp (= 1.6.4)
+    timezone-ii (= 0.2.0)
+  cb-java (0.2.0)
+    java (= 1.22.0)
+    java_ext (= 0.1.1)
+    maven (= 1.1.0)
+  cb-nginx (0.1.0)
+    nginx (= 2.7.4)
+  cb-tomcat (0.1.0)
+    ark (= 0.9.0)
+    cb-java (= 0.2.0)
+  chef_handler (1.1.6)
+  hosts_file (0.3.0)
+  java (1.22.0)
+  java_ext (0.1.1)
+    java (>= 0.0.0)
+  maven (1.1.0)
+    ark (~> 0.4)
+    java (~> 1.13)
+  nginx (2.7.4)
+    apt (~> 2.2)
+    bluepill (~> 2.3)
+    build-essential (~> 2.0)
+    ohai (~> 2.0)
+    runit (~> 1.2)
+    yum-epel (~> 0.3)
+  ntp (1.6.4)
+  ohai (2.0.1)
+  project-stack (0.1.0)
+    cb-common (= 0.3.0)
+    cb-nginx (= 0.1.0)
+    cb-tomcat (= 0.1.0)
+  rsyslog (1.12.2)
+  runit (1.5.10)
+    build-essential (>= 0.0.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+  timezone-ii (0.2.0)
+  windows (1.32.3)
+    chef_handler (>= 0.0.0)
+  yum (3.2.2)
+  yum-epel (0.3.6)
+    yum (~> 3.0)

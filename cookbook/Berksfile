@@ -1,0 +1,26 @@
+source 'https://api.berkshelf.com'
+
+metadata
+
+cookbook 'hosts_file',
+         git: 'git@github.com:frkline/hosts_file.git',
+         branch: 'release-0.3.0'
+cookbook 'cb-common',
+         git: 'git@github.com:frkline/cb-common.git',
+         branch: 'release-0.3.0',
+         rel: 'cookbook'
+cookbook 'java_ext',
+         git: 'git@github.com:frkline/java_ext.git',
+         tag: '0.1.1'
+cookbook 'cb-java',
+         git: 'git@github.com:frkline/cb-java.git',
+         branch: 'release-0.2.0',
+         rel: 'cookbook'
+cookbook 'cb-tomcat',
+         git: 'git@github.com:frkline/cb-tomcat.git',
+         branch: 'release-0.1.0',
+         rel: 'cookbook'
+cookbook 'cb-nginx',
+         git: 'git@github.com:frkline/cb-nginx.git',
+         branch: 'release-0.1.0',
+         rel: 'cookbook'
