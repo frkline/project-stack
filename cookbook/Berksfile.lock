@@ -11,7 +11,7 @@ DEPENDENCIES
     rel: cookbook
   cb-nginx
     git: git@github.com:frkline/cb-nginx.git
-    revision: d4c89f5c8e3a390f2e0e8d3a8091d8f5a7e84221
+    revision: 46cf8003648ca0f456cbdd2ecfc67a008260ae22
     branch: release-0.1.0
     rel: cookbook
   cb-tomcat
