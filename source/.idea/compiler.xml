@@ -28,12 +28,15 @@
         <module name="stack-session" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="stack-account" target="1.8" />
       <module name="stack-api" target="1.8" />
       <module name="stack-audit" target="1.8" />
       <module name="stack-session" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-Werror -Xlint:all" />
   </component>
 </project>
 
