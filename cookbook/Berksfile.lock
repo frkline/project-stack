@@ -16,7 +16,7 @@ DEPENDENCIES
     rel: cookbook
   cb-tomcat
     git: git@github.com:frkline/cb-tomcat.git
-    revision: 29b1325035d0d0d015fc4762b061d5b192c32ac6
+    revision: d1c454149ad79f58f01d2f66672de53c0181cb52
     branch: release-0.1.0
     rel: cookbook
   hosts_file

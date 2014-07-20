@@ -28,6 +28,12 @@
         <module name="stack-session" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="stack-account" target="1.8" />
+      <module name="stack-api" target="1.8" />
+      <module name="stack-audit" target="1.8" />
+      <module name="stack-session" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 
