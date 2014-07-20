@@ -11,9 +11,11 @@
   <artifactId>stack-api</artifactId>
   <version>develop-SNAPSHOT</version>
   <name>stack-api</name>
+  <packaging>war</packaging>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <tomcat.context>api</tomcat.context>
   </properties>
   <dependencies>
     <dependency>
@@ -96,4 +98,15 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <configuration>
+          <path>/${tomcat.context}</path>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
