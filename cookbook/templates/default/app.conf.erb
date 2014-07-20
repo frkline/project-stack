@@ -1,0 +1,8 @@
+server {
+    listen       80;
+    server_name  "";
+    location / {
+        root   <%= node['stack']['app']['dir'] %>;
+        index  index.html;
+    }
+}

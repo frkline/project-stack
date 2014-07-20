@@ -92,9 +92,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         server_repl_password: 'replpass'
       }
     }
-
     chef.run_list = [
         "recipe[project-stack::default]"
     ]
+    chef.environments_path = 'environments'
+    chef.environment = 'development'
   end
 end
