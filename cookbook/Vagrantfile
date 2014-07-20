@@ -36,7 +36,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #config.vm.network "forwarded_port", guest: 80, host: 80 # nginx
   #config.vm.network "forwarded_port", guest: 443, host: 443 # nginx
   config.vm.network "forwarded_port", guest: 8080, host: 8080 # tomcat
-  config.vm.network "forwarded_port", guest: 8000, host: 8000 # angular guest
   config.vm.network "forwarded_port", guest: 10001, host: 10001 # tomcat jmx rmi bind
   config.vm.network "forwarded_port", guest: 10002, host: 10002 # tomcat jmx ephemeral
   config.vm.network "forwarded_port", guest: 10003, host: 10003 # tomcat jdwp
