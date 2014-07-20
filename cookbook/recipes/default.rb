@@ -11,7 +11,7 @@ include_recipe 'cb-tomcat'
 
 # Configure nginx
 include_recipe 'cb-nginx'
-file '/etc/conf.d/' do
+file '/etc/nginx/sites-available/default' do
   action :delete
 end
 file '/etc/nginx/conf.d/default.conf' do
