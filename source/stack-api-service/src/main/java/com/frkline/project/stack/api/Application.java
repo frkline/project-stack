@@ -1,6 +1,7 @@
 package com.frkline.project.stack.api;
 
 import com.frkline.project.stack.common.service.ApplicationBase;
+import com.frkline.project.stack.common.service.ApplicationBaseConfig;
 
 /**
  * Bootstrap using Servlet 3.0
@@ -13,13 +14,9 @@ public class Application
   }
 
   @Override
-  protected Class<?>[] getAnnotatedRootContexts() {
+  protected Class<?>[] getConfigurations() {
     return new Class<?>[]{
-      ApplicationConfig.class, };
-  }
-
-  @Override
-  protected Class<?>[] getAnnotatedDispatchServletContexts() {
-    return new Class<?>[0];
+      ApplicationConfig.class,
+      ApplicationBaseConfig.class, };
   }
 }

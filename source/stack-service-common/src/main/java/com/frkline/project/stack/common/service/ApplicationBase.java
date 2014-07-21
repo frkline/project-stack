@@ -42,7 +42,7 @@ public abstract class ApplicationBase
     rootContext.setAllowCircularReferences(
         true);
     rootContext.register(
-        this.getAnnotatedRootContexts());
+        this.getConfigurations());
     servletContext.addListener(
         new ContextLoaderListener(
             rootContext));
@@ -77,13 +77,6 @@ public abstract class ApplicationBase
    * Retrieve root contexts to build the application
    * @return Annotated configuration classes
    */
-  protected abstract Class<?>[] getAnnotatedRootContexts();
-
-  /**
-   * Retrieve servlet contents to wire in external services,
-   * such as controllers
-   * @return Annotated configuration classes
-   */
-  protected abstract Class<?>[] getAnnotatedDispatchServletContexts();
+  protected abstract Class<?>[] getConfigurations();
 
 }

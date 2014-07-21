@@ -1,4 +1,4 @@
-package com.frkline.project.stack.api;
+package com.frkline.project.stack.common.service;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -7,6 +7,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation
     .WebMvcConfigurerAdapter;
 
+
 /**
  * Wire application dependencies
  * @author frank
@@ -14,13 +15,13 @@ import org.springframework.web.servlet.config.annotation
 @Configuration
 @EnableWebMvc
 @ComponentScan({
-    "com.frkline.project.stack.api.service"
+    "com.frkline.project.stack.common.service"
 })
 @PropertySource("classpath:application.properties")
-public class ApplicationConfig
+public class ApplicationBaseConfig
     extends WebMvcConfigurerAdapter {
 
-  public ApplicationConfig() {
+  public ApplicationBaseConfig() {
     super();
   }
 
