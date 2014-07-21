@@ -1,8 +1,8 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="stack-api:war">
+  <artifact type="war" name="stack-api-service:war">
     <output-path>$PROJECT_DIR$/stack-api-service/target</output-path>
     <root id="archive" name="stack-api-service-develop-SNAPSHOT.war">
-      <element id="artifact" artifact-name="stack-api:war exploded" />
+      <element id="artifact" artifact-name="stack-api-service:war exploded" />
     </root>
   </artifact>
 </component>

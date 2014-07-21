@@ -3,7 +3,7 @@ description 'development with vagrant'
 override_attributes ({
     'stack' => {
         'app' => {
-            'dir' => '/host/source/stack-app/app/'
+            'dir' => '/host/source/stack-app-static/app/'
         }
     }
 })

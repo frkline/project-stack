@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="stack-api:war exploded">
+  <artifact type="exploded-war" name="stack-api-service:war exploded">
     <output-path>$PROJECT_DIR$/stack-api-service/target/stack-api-service-develop-SNAPSHOT</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="stack-api-service/web/Web" />
@@ -12,7 +12,7 @@
             <element id="module-output" name="stack-service-common" />
           </element>
           <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
-          <element id="library" level="project" name="Maven: javax.annotation:jsr250-api:1" />
+          <element id="library" level="project" name="Maven: javax.annotation:jsr250-api:1.0" />
           <element id="library" level="project" name="Maven: com.google.guava:guava:17.0" />
           <element id="library" level="project" name="Maven: com.google.code.findbugs:jsr305:3.0.0" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.1.2" />

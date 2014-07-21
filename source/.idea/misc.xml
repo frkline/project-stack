@@ -4,12 +4,13 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/stack-api" />
+    <file type="web" url="file://$PROJECT_DIR$/stack-api-service" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/stack-service-common/pom.xml" />
       </list>
     </option>
   </component>

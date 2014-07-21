@@ -4,10 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../cookbook/cookbook.iml" filepath="$PROJECT_DIR$/../cookbook/cookbook.iml" />
       <module fileurl="file://$PROJECT_DIR$/stack.iml" filepath="$PROJECT_DIR$/stack.iml" />
-      <module fileurl="file://$PROJECT_DIR$/stack-account/stack-account.iml" filepath="$PROJECT_DIR$/stack-account/stack-account.iml" />
-      <module fileurl="file://$PROJECT_DIR$/stack-api/stack-api.iml" filepath="$PROJECT_DIR$/stack-api/stack-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/stack-audit/stack-audit.iml" filepath="$PROJECT_DIR$/stack-audit/stack-audit.iml" />
-      <module fileurl="file://$PROJECT_DIR$/stack-session/stack-session.iml" filepath="$PROJECT_DIR$/stack-session/stack-session.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stack-api-service/stack-api-service.iml" filepath="$PROJECT_DIR$/stack-api-service/stack-api-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stack-service-common/stack-service-common.iml" filepath="$PROJECT_DIR$/stack-service-common/stack-service-common.iml" />
     </modules>
   </component>
 </project>
