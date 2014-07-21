@@ -3,15 +3,15 @@ package com.frkline.project.stack.api;
 import javax.annotation.Nonnull;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRegistration;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.ApplicationEvent;
-import org.springframework.context.ApplicationListener;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support
     .AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
 
 /**
  * Bootstrap using Servlet 3.0
@@ -33,30 +33,51 @@ public class Application
     throws ServletException {
 
     // Notify
-    LOGGER.info("API starting");
+    LOGGER.info("API starting...");
 
     // Create, start, and manage the application context
-    final AnnotationConfigWebApplicationContext applicationContext =
+    LOGGER.info("Initializing application context...");
+    final AnnotationConfigWebApplicationContext rootContext =
         new AnnotationConfigWebApplicationContext();
-    applicationContext.setAllowBeanDefinitionOverriding(
-        true);
-    applicationContext.setAllowCircularReferences(
-        true);
-    applicationContext.addApplicationListener(
-      new ApplicationListener<ApplicationEvent>() {
-        @Override
-        public void onApplicationEvent(
-            final ApplicationEvent event) {
-          LOGGER.info(
-              "Context event: {}",
-              event);
-        }
-      });
-    applicationContext.register(
-      ApplicationConfig.class);
-    applicationContext.refresh();
+    rootContext.register(
+        ApplicationConfig.class);
     servletContext.addListener(
-      new ContextLoaderListener(
-          applicationContext));
+        new ContextLoaderListener(
+            rootContext));
+    /*rootContext.setAllowBeanDefinitionOverriding(
+        true);
+    rootContext.setAllowCircularReferences(
+        true);
+    // Checkstyle doesn't yet support lamdas
+    rootContext.addApplicationListener(
+        new ApplicationListener<ApplicationEvent>() {
+          @Override
+          public void onApplicationEvent(
+              @Nonnull final ApplicationEvent event) {
+            LOGGER.info(
+                "Application context event: {}",
+                event);
+          }
+        });
+    rootContext.register(
+        ApplicationConfig.class);
+    rootContext.setServletContext(
+        servletContext);*/
+
+    // Handle requests with the dispatcher servlet
+    final ServletRegistration.Dynamic dispatcher =
+        servletContext.addServlet(
+            "dispatcher",
+            new DispatcherServlet(
+                rootContext));
+    dispatcher.setLoadOnStartup(1);
+    dispatcher.addMapping("/");
+
+    /*
+    FilterRegistration.Dynamic fr = servletContext.addFilter("encodingFilter",
+        new CharacterEncodingFilter());
+    fr.setInitParameter("encoding", "UTF-8");
+    fr.setInitParameter("forceEncoding", "true");
+    fr.addMappingForUrlPatterns(null, true, "/*");*/
   }
 }
