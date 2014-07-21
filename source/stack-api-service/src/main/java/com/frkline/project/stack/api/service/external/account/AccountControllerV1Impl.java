@@ -6,10 +6,12 @@ import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.frkline.project.stack.common.Constants;
 import com.frkline.project.stack.common.service.internal.metric.MetricService;
 import com.google.common.base.Preconditions;
 
@@ -27,12 +29,19 @@ public class AccountControllerV1Impl {
           AccountControllerV1Impl.class);
 
   private final MetricService metricService;
+  private final String application;
 
   @Inject
   public AccountControllerV1Impl(
+      @Nonnull final Environment environment,
       @Nonnull final MetricService metricService) {
     Preconditions.checkNotNull(
+        environment);
+    Preconditions.checkNotNull(
         metricService);
+    this.application =
+      environment.getRequiredProperty(
+          Constants.APPLICATION_NAME);
     this.metricService =
         metricService;
   }
@@ -40,7 +49,7 @@ public class AccountControllerV1Impl {
   @RequestMapping("/ping")
   @ResponseBody
   public String ping() {
-    return "pong";
+    return this.application + " - pong";
   }
 
   @RequestMapping("/metrics")

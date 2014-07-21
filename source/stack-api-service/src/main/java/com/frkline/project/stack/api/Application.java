@@ -1,6 +1,7 @@
 package com.frkline.project.stack.api;
 
 import javax.annotation.Nonnull;
+import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
@@ -11,6 +12,7 @@ import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support
     .AnnotationConfigWebApplicationContext;
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.DispatcherServlet;
 
 /**
@@ -39,30 +41,15 @@ public class Application
     LOGGER.info("Initializing application context...");
     final AnnotationConfigWebApplicationContext rootContext =
         new AnnotationConfigWebApplicationContext();
+    rootContext.setAllowBeanDefinitionOverriding(
+        true);
+    rootContext.setAllowCircularReferences(
+        true);
     rootContext.register(
         ApplicationConfig.class);
     servletContext.addListener(
         new ContextLoaderListener(
             rootContext));
-    /*rootContext.setAllowBeanDefinitionOverriding(
-        true);
-    rootContext.setAllowCircularReferences(
-        true);
-    // Checkstyle doesn't yet support lamdas
-    rootContext.addApplicationListener(
-        new ApplicationListener<ApplicationEvent>() {
-          @Override
-          public void onApplicationEvent(
-              @Nonnull final ApplicationEvent event) {
-            LOGGER.info(
-                "Application context event: {}",
-                event);
-          }
-        });
-    rootContext.register(
-        ApplicationConfig.class);
-    rootContext.setServletContext(
-        servletContext);*/
 
     // Handle requests with the dispatcher servlet
     final ServletRegistration.Dynamic dispatcher =
@@ -73,11 +60,20 @@ public class Application
     dispatcher.setLoadOnStartup(1);
     dispatcher.addMapping("/");
 
-    /*
-    FilterRegistration.Dynamic fr = servletContext.addFilter("encodingFilter",
+    // Character encoding filter
+    final FilterRegistration.Dynamic encodingFilter =
+        servletContext.addFilter(
+            "encodingFilter",
         new CharacterEncodingFilter());
-    fr.setInitParameter("encoding", "UTF-8");
-    fr.setInitParameter("forceEncoding", "true");
-    fr.addMappingForUrlPatterns(null, true, "/*");*/
+    encodingFilter.setInitParameter(
+        "encoding",
+        "UTF-8");
+    encodingFilter.setInitParameter(
+        "forceEncoding",
+        "true");
+    encodingFilter.addMappingForUrlPatterns(
+        null,
+        true,
+        "/*");
   }
 }
