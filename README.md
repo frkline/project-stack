@@ -22,6 +22,7 @@ Prerequisite: [Configure the Cookbook](#configure-the-cookbook)
 **Start a CentOS 6.5 VirtualBox VM**
 ```
 > cd cookbook
+> bundle exec berks install
 > bundle exec vagrant up
 ```
 
