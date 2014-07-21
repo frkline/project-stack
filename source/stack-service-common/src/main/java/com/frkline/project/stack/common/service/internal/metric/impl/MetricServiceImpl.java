@@ -38,7 +38,7 @@ public class MetricServiceImpl
     final String applicationName =
         environment
             .getRequiredProperty(
-                Constants.APPLICATION_NAME);
+                Constants.ENV_APPLICATION_NAME);
     JmxReporter
         .forRegistry(
             this.metricRegistry)

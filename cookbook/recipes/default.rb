@@ -8,6 +8,21 @@ include_recipe 'cb-common'
 
 # Configure tomcat
 include_recipe 'cb-tomcat'
+directory 'opt/tomcat/conf/webapps' do
+  recursive true
+  mode '755'
+  action :create
+end
+template '/opt/tomcat/conf/webapps/api.properties' do
+  source 'api.properties.erb'
+  mode '644'
+  notifies :restart, 'service[tomcat]', :delayed
+end
+template '/opt/tomcat/conf/Catalina/localhost/api.xml' do
+  source 'api.xml.erb'
+  mode '644'
+  notifies :restart, 'service[tomcat]', :delayed
+end
 
 # Configure nginx
 include_recipe 'cb-nginx'

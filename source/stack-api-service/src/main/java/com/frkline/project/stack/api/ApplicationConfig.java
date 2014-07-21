@@ -14,9 +14,10 @@ import org.springframework.web.servlet.config.annotation
 @Configuration
 @EnableWebMvc
 @ComponentScan({
+    "com.frkline.project.stack.common.service",
     "com.frkline.project.stack.api.service"
 })
-@PropertySource("classpath:application.properties")
+@PropertySource("file:${java:comp/env/configLocation}")
 public class ApplicationConfig
     extends WebMvcConfigurerAdapter {
 

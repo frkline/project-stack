@@ -41,7 +41,7 @@ public class AccountControllerV1Impl {
         metricService);
     this.application =
       environment.getRequiredProperty(
-          Constants.APPLICATION_NAME);
+          Constants.ENV_APPLICATION_NAME);
     this.metricService =
         metricService;
   }
