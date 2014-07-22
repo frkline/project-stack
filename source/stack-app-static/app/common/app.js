@@ -6,7 +6,7 @@ var app = angular.module('app', ['ui.bootstrap']);
 app.controller('DropdownCtrl', ['$scope',
     function($scope) {
         $scope.items = [
-            'The first choice!',
+            'hello dan 3',
             'And another choice for you.',
             'but wait! A third!'
         ];
@@ -16,7 +16,9 @@ app.controller('DropdownCtrl', ['$scope',
         };
 
         $scope.toggled = function(open) {
-            console.log('Dropdown is now: ', open);
+            if(console) {
+                console.log('Dropdown is now: ', open);
+            }
         };
 
         $scope.toggleDropdown = function($event) {
