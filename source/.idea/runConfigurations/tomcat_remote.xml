@@ -1,0 +1,42 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="tomcat remote" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" APPLICATION_SERVER_NAME="Tomcat 7.0.54" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
+    <option name="LOCAL" value="false" />
+    <option name="OPEN_IN_BROWSER" value="false" />
+    <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
+    <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+    <deployment>
+      <artifact name="stack-api-service:war">
+        <settings>
+          <option name="CONTEXT_PATH" value="/api" />
+        </settings>
+      </artifact>
+    </deployment>
+    <server-settings>
+      <data>
+        <option name="jndiPort" value="10001" />
+        <option name="stagingRemotePath" value="/host/shared" />
+        <option name="transportHostId" value="3c8e8344-1e24-48af-a494-ccbed286029d" />
+        <option name="transportStagingTarget">
+          <TransportTarget>
+            <option name="id" value="6f50364e-78b4-4363-a08b-dda20bf42ac5" />
+          </TransportTarget>
+        </option>
+      </data>
+    </server-settings>
+    <predefined_log_file id="Tomcat" enabled="true" />
+    <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+    <RunnerSettings RunnerId="Debug">
+      <option name="DEBUG_PORT" value="10003" />
+      <option name="TRANSPORT" value="0" />
+      <option name="LOCAL" value="false" />
+    </RunnerSettings>
+    <RunnerSettings RunnerId="Run" />
+    <ConfigurationWrapper RunnerId="Debug" />
+    <ConfigurationWrapper RunnerId="Run" />
+    <method>
+      <option name="BuildArtifacts" enabled="true">
+        <artifact name="stack-api-service:war" />
+      </option>
+    </method>
+  </configuration>
+</component>
