@@ -31,7 +31,10 @@ Prerequisite: [Configure the Cookbook](#configure-the-cookbook)
 > bundle exec vagrant ssh
 ```
 
-## Development
+**Open in IntelliJ**
+Select that you would like to open a project and select project-stack/source
+
+## Cookbook Development
 
 0. [Configure Your Environment](https://github.com/frkline/dev-setup/#configure-your-environment)
 1. Clone the Repository  
@@ -61,9 +64,9 @@ Prerequisite: [Configure the Cookbook](#configure-the-cookbook)
   ```
   > cd cookbook
   > bundle exec guard start
-  ```
+  ```  
   
-### Development Tools
+### Cookbook Development Tools
 
 **Run ChefSpec**  
 ChefSpec is a unit testing framework for testing Chef cookbooks. ChefSpec makes it easy to write examples and get fast feedback on cookbook changes without the need for virtual machines or cloud servers. For more information, see: https://github.com/sethvargo/chefspec.
