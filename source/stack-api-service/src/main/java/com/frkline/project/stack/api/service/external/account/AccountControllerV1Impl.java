@@ -49,6 +49,7 @@ public class AccountControllerV1Impl {
   @RequestMapping("/ping")
   @ResponseBody
   public String ping() {
+    LOGGER.info("ping");
     return this.application + " - pong";
   }
 
