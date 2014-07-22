@@ -7,7 +7,8 @@ override_attributes ({
         }
     },
     # Vagrant doesn't work properly with sendfile linked to shared directory
-    # http://jeremyfelt.com/code/2013/01/08/clear-nginx-cache-in-vagrant/
+    # https://docs.vagrantup.com/v2/synced-folders/virtualbox.html
+    # https://www.virtualbox.org/ticket/9069
     'nginx' => {
       'sendfile' => 'off'
     }
