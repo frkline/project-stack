@@ -18,6 +18,11 @@ template '/opt/tomcat/conf/webapps/api.properties' do
   mode '644'
   notifies :restart, 'service[tomcat]', :delayed
 end
+directory '/opt/tomcat/conf/Catalina/localhost' do
+  recursive true
+  mode '755'
+  action :create
+end
 template '/opt/tomcat/conf/Catalina/localhost/api.xml' do
   source 'api.xml.erb'
   mode '644'
